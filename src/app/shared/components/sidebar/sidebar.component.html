@@ -1,0 +1,13 @@
+<div class="bg-dark border-right p-3" id="sidebar" >
+  <div class="container">
+    <h3 class="text-light">Gifs App</h3>
+    <button *ngIf="tags.length > 0" (click)="borrarCache()" class="btn-clear">Borrar</button>
+  </div>
+  <hr class="text-white">
+
+  <div *ngFor="let i of tags"  class="list-group list-reset" (click)="historyPress(i)">
+    <button class="list-group-item list-group-item-action active m-1">
+     {{i | titlecase }}
+    </button>
+  </div>
+</div>
