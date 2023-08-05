@@ -25,11 +25,9 @@ export class GifsService {
 
   private organizeHistory( tag:string ){
 
-    console.log(tag)
     tag = tag.toLowerCase();
 
     if( this._tagsHistory.includes(tag)){
-      alert('Ya existe')
     this._tagsHistory = this._tagsHistory.filter( (tagExist) => tagExist !== tag )
     }
     this._tagsHistory.unshift( tag );
@@ -47,7 +45,6 @@ export class GifsService {
       if(!localStorage.getItem('history')) return;
 
       this._tagsHistory = JSON.parse( localStorage.getItem('history')! )
-      console.log(this._tagsHistory)
 
       if( this._tagsHistory.length === 0 ) return;
       this.searchTag( this._tagsHistory[0]);
